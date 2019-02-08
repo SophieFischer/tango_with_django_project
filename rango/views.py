@@ -1,16 +1,10 @@
 from django.shortcuts import render
-#Import the Category Model
-from rango.models import Category
-from rango.models import Page
-from rango.forms import CategoryForm
-from rango.forms import PageForm
-from rango.forms import UserForm, UserProfileForm
-from django.http import HttpResponse
-from django.contrib.auth import authenticate, login
+from rango.models import Category, Page
+from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout
 from datetime import datetime
 
 def get_server_side_cookie(request, cookie, default_val=None):
